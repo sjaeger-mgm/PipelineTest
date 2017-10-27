@@ -6,7 +6,7 @@ node {
 
     stage 'Clean', {
     	echo 'Cleaning Project'
-    	sh './graldew clean'
+    	sh './gradlew clean'
     }
 
     stage 'Build', {
