@@ -19,8 +19,9 @@ node {
         sh './gradlew jar'
     }
 
-    stage 'Deploy', {
-        echo 'Fake Deploy'
+    stage 'Publish', {
+        echo 'Publish docker file'
+        sh './gradlew buildDocker'
     }
 }
 
