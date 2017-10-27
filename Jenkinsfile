@@ -4,8 +4,18 @@ node {
             checkout scm
     }
 
+    stage 'Clean', {
+    	echo 'Cleaning Project'
+    	sh './graldew clean'
+    }
+
     stage 'Build', {
-        echo 'Start building app'
+    	echo 'Start building app'
+ 		sh './gradlew build'
+    }
+
+    stage 'Package', {
+        echo 'Start packaging app'
         sh './gradlew jar'
     }
 
