@@ -3,18 +3,10 @@ node {
         	echo "Checking out $Globals.SCM_URL/master"
             checkout scm
     }
+
     stage 'Build', {
         echo 'Start building app'
-        withMaven(jdk: '9', maven: '3.5.2') {
-            sh 'mvn -f "my-app/pom.xml" clean install'
-        }
-    }
-
-    stage 'Package', {
-        echo 'Create jar file'
-        withMaven(jdk: '9', maven: '3.5.2') {
-            sh 'mvn -f "my-app/pom.xml" package'
-        }
+        sh './gradlew build'
     }
 
     stage 'Deploy', {
