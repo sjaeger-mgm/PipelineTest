@@ -6,7 +6,7 @@ node {
 
     stage 'Build', {
         echo 'Start building app'
-        sh './gradlew build'
+        sh './gradlew jar'
     }
 
     stage 'Deploy', {
