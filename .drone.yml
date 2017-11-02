@@ -1,0 +1,5 @@
+pipeline:
+  backend:
+    image: gradle
+    commands:
+      - gradle build
